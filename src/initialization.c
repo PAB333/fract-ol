@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 20:02:12 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/21 03:43:03 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/21 04:41:25 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	fractal_initialization(t_fractal *fractal)
 		free(fractal->mlx_connection);
 		malloc_error();
 	}
-	fractal->img.img_ptr = mlx_get_data_addr(fractal->img.img_ptr,
+	fractal->img.pixel_ptr = mlx_get_data_addr(fractal->img.img_ptr,
 			&fractal->img.bits_per_pixel, &fractal->img.line_len,
 			&fractal->img.endian);
 	data_initialization(fractal);
