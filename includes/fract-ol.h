@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 17:56:55 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/21 03:27:41 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/22 00:28:46 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,6 @@ typedef struct	 s_fractal
 	int		definition;
 }				t_fractal;
 
-typedef	struct 	s_scaling_values
-{
-	double	unscale_num;
-	double	new_min;
-	double	new_max;
-	double	old_min;
-	double	old_max;
-}				t_scaling_values;
-
 typedef	struct 	s_complex
 {
 	double	x;
@@ -84,7 +75,6 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
 void		ft_putstr_fd(char *s, int fd);
 
 //math utils
-double		scaling(t_scaling_values v);
 t_complex	sum_complex(t_complex z1, t_complex z2);
 t_complex	square_complex(t_complex z);
 
