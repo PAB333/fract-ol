@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:37:17 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/20 19:38:42 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/21 02:54:37 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,31 @@ void	ft_putstr_fd(char *s, int fd)
 	i = -1;
 	while (s[++i])
 		write(fd, &s[i], 1);
+}
+
+double	scaling(t_scaling_values v)
+{
+	double	result;
+
+	result = (v.new_max - v.new_min) * (v.unscale_num - v.old_min);
+	result = result / (v.old_max - v.old_min) + v.new_min;
+	return (result);
+}
+
+t_complex	sum_complex(t_complex z1, t_complex z2)
+{
+	t_complex	result;
+
+	result.x = z1.x + z2.x;
+	result.y = z1.y + z2.y;
+	return (result);
+}
+
+t_complex	square_complex(t_complex z)
+{
+	t_complex	result;
+
+	result.x = (z.x + z.x) - (z.y + z.y);
+	result.y = 2 * z.x * z.y;
+	return (result);
 }
