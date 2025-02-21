@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 01:53:55 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/21 03:43:35 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/21 18:24:47 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	fill_scaling_values1(t_scaling_values *s, int x)
 {
-	s->new_max = 2;
+	s->new_max = +2;
 	s->new_min = -2;
 	s->old_max = size_x;
 	s->old_min = 0;
@@ -26,7 +26,7 @@ void	fill_scaling_values2(t_scaling_values *s, int y)
 	s->unscale_num = y;
 	s->old_max = size_y;
 	s->new_max = -2;
-	s->new_min = 2;
+	s->new_min = +2;
 }
 
 void	pixel_put(int x, int y, t_img *img, int color)
@@ -55,13 +55,13 @@ void	manage_pixel(int x, int y, t_fractal *fractal)
 	while (i < fractal->definition)
 	{
 		z = sum_complex(square_complex(z), c);
-		if ((z.x + z.x) + (z.y + z.y) > fractal->esc_value)
+		if ((z.x * z.x) + (z.y * z.y) > fractal->esc_value)
 		{
 			clr = (BLACK - WHITE) * (i - 0) / (fractal->definition - 0) + WHITE;
 			pixel_put(x, y, &fractal->img, clr);
 			return;
 		}
-		i++;
+		++i;
 	}
 	pixel_put(x, y, &fractal->img, NEON_RED);
 }
