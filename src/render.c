@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 01:53:55 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/22 20:52:12 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/22 20:54:06 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	manage_pixel(int x, int y, t_fractal *fractal)
 		}
 		++i;
 	}
-	pixel_put(x, y, &fractal->img, NEON_RED);
+	pixel_put(x, y, &fractal->img, BLACK);
 }
 
 void	fractal_render(t_fractal *fractal)
