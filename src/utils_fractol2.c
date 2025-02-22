@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 03:00:01 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/22 20:49:26 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/22 20:52:25 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ double	scaling_values_2(t_scaling_values v, int y)
 	return (scaling(v));
 }
 
-double	scaling_values_3(t_scaling_values v, t_fractal f, int i)
+double	scaling_values_3(t_scaling_values v, t_fractal *f, int i)
 {
 	v.new_max = WHITE;
 	v.new_min = BLACK;
-	v.old_max = f.definition;
+	v.old_max = f->definition;
 	v.old_min = 0;
 	v.unscale_num = i;
 	return (scaling(v));

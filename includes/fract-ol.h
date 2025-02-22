@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 17:56:55 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/22 20:47:53 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/22 20:52:32 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ t_complex	square_complex(t_complex z);
 double		scaling(t_scaling_values v);
 double	scaling_values_1(t_scaling_values v, int x);
 double	scaling_values_2(t_scaling_values v, int y);
-double	scaling_values_3(t_scaling_values v, t_fractal f, int i);
+double	scaling_values_3(t_scaling_values v, t_fractal *f, int i);
 
 
 #endif
