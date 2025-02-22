@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:37:17 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/22 00:29:02 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/22 01:28:13 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_complex	square_complex(t_complex z)
 {
 	t_complex	result;
 
-	result.x = (z.x + z.x) - (z.y + z.y);
+	result.x = (z.x * z.x) - (z.y * z.y);
 	result.y = 2 * z.x * z.y;
 	return (result);
 }
