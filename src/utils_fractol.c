@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:37:17 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/22 01:32:58 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/22 20:39:51 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,11 @@ t_complex	square_complex(t_complex z)
 	return (result);
 }
 
-double scaling(double unscaled_num, double new_min, double new_max, double old_min, double old_max)
+double	scaling(t_scaling_values v)
 {
-    return (new_max - new_min) * (unscaled_num - old_min) / (old_max - old_min) + new_min;
+	double	result;
+
+	result = (v.new_max - v.new_min) * (v.unscale_num - v.old_min) /
+			(v.old_max - v.old_min) + v.new_min;
+	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 01:53:55 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/22 16:18:43 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/22 20:48:33 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,19 @@ void	manage_pixel(int x, int y, t_fractal *fractal)
 	t_complex			c;
 	int					i;
 	int					clr;
+	t_scaling_values	v;
 
 	i = 0;
 	z.x = 0.0;
 	z.y = 0.0;
-	c.x = scaling(x, -2, +2, 0, size_x);
-	c.y = scaling(y, +2, -2, 0, size_y);
+	c.x = scaling_values_1(v, x);
+	c.y = scaling_values_2(v, y);
 	while (i < fractal->definition)
 	{
 		z = sum_complex(square_complex(z), c);
 		if ((z.x * z.x) + (z.y * z.y) > fractal->esc_value)
 		{
-			clr = scaling(i, BLACK, WHITE, 0, fractal->definition);
+			clr = sscaling_values_3(v, fractal, i);
 			pixel_put(x, y, &fractal->img, clr);
 			return;
 		}

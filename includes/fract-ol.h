@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 17:56:55 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/22 01:33:22 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/22 20:47:53 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,15 @@ typedef	struct 	s_complex
 	double	y;
 }				t_complex;
 
+typedef struct 	s_scaling_values
+{
+	double	unscale_num;
+	double	new_min;
+	double	new_max;
+	double	old_min;
+	double	old_max;
+}				t_scaling_values;
+
 
 //fractal initialization
 void		fractal_initialization(t_fractal *fractal);
@@ -77,6 +86,10 @@ void		ft_putstr_fd(char *s, int fd);
 //math utils
 t_complex	sum_complex(t_complex z1, t_complex z2);
 t_complex	square_complex(t_complex z);
-double		scaling(double unscaled_num, double new_min, double new_max, double old_min, double old_max);
+double		scaling(t_scaling_values v);
+double	scaling_values_1(t_scaling_values v, int x);
+double	scaling_values_2(t_scaling_values v, int y);
+double	scaling_values_3(t_scaling_values v, t_fractal f, int i);
+
 
 #endif
