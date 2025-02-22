@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 01:53:55 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/22 01:35:51 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/22 16:18:43 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	pixel_put(int x, int y, t_img *img, int color)
 	int	offset;
 
 	offset = (y * img->line_len) + (x * (img->bits_per_pixel / 8));
-	*(unsigned int *)(img->img_ptr + offset) = color;
+	*(unsigned int *)(img->pixel_ptr + offset) = color;
 }
 
 void	manage_pixel(int x, int y, t_fractal *fractal)
