@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 17:56:55 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/22 00:28:46 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/22 01:33:22 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,6 @@ void		ft_putstr_fd(char *s, int fd);
 //math utils
 t_complex	sum_complex(t_complex z1, t_complex z2);
 t_complex	square_complex(t_complex z);
+double		scaling(double unscaled_num, double new_min, double new_max, double old_min, double old_max);
 
 #endif
