@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 20:02:12 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/21 04:41:25 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/24 23:45:27 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,20 @@ void	malloc_error(void)
 	exit(EXIT_FAILURE);
 }
 
+void	event_initialization(t_fractal *fractal)
+{
+	mlx_hook(fractal->mlx_window, KeyPress, KeyPressMask, key_manage, fractal);
+	mlx_hook(fractal->mlx_window, ButtonPress, ButtonPressMask, mouse_manage, fractal);
+	mlx_hook(fractal->mlx_window, DestroyNotify, StructureNotifyMask, x_manage, fractal);
+}
+
 void	data_initialization(t_fractal *fractal)
 {
 	fractal->esc_value = 4;
 	fractal->definition = 100;
+	fractal->shift_x = 0.0;
+	fractal->shift_y = 0.0;
+	fractal->zoom = 1.0;
 }
 
 void	fractal_initialization(t_fractal *fractal)
@@ -49,5 +59,6 @@ void	fractal_initialization(t_fractal *fractal)
 	fractal->img.pixel_ptr = mlx_get_data_addr(fractal->img.img_ptr,
 			&fractal->img.bits_per_pixel, &fractal->img.line_len,
 			&fractal->img.endian);
+	event_initialization(fractal);
 	data_initialization(fractal);
 }

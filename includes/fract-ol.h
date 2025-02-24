@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 17:56:55 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/22 20:52:32 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/24 23:45:02 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <math.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <X11/X.h>
+#include <X11/keysym.h>
 #include "../minilibx-linux/mlx.h"
 
 #define size_x 800
@@ -55,6 +57,9 @@ typedef struct	 s_fractal
 	t_img	img;
 	double	esc_value;
 	int		definition;
+	double	shift_x;
+	double	shift_y;
+	double	zoom;
 }				t_fractal;
 
 typedef	struct 	s_complex
@@ -87,9 +92,13 @@ void		ft_putstr_fd(char *s, int fd);
 t_complex	sum_complex(t_complex z1, t_complex z2);
 t_complex	square_complex(t_complex z);
 double		scaling(t_scaling_values v);
-double	scaling_values_1(t_scaling_values v, int x);
-double	scaling_values_2(t_scaling_values v, int y);
-double	scaling_values_3(t_scaling_values v, t_fractal *f, int i);
+double		scaling_values_1(t_scaling_values v, int x);
+double		scaling_values_2(t_scaling_values v, int y);
+double		scaling_values_3(t_scaling_values v, t_fractal *f, int i);
 
+//events
+int			key_manage(int keysym, t_fractal fractal);
+int			x_manage(t_fractal *fractal);
+int			mouse_manage(int button, int x, int y, t_fractal *fractal);
 
 #endif
