@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 20:02:12 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/25 19:02:10 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/25 19:25:49 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	event_initialization(t_fractal *fractal)
 	mlx_hook(fractal->mlx_window, KeyPress, KeyPressMask, key_manage, fractal);
 	mlx_hook(fractal->mlx_window, ButtonPress, ButtonPressMask, mouse_manage, fractal);
 	mlx_hook(fractal->mlx_window, DestroyNotify, StructureNotifyMask, x_manage, fractal);
-	mlx_hook(fractal->mlx_window, MotionNotify, PointerMotionMask, julia_track, fractal);
 }
 
 void	data_initialization(t_fractal *fractal)
