@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 23:02:58 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/25 00:00:23 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/25 19:10:45 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,21 @@ int	mouse_manage(int button, int x, int y, t_fractal *fractal)
 		fractal->zoom *= 0.95;
 	else if (button == Button5)
 		fractal->zoom *= 1.05;
+	fractal_render(fractal);
+	return (0);
+}
+
+int	julia_track(int x, int y, t_fractal *fractal)
+{
+	t_scaling_values	v;
+
+	if (ft_strncmp(fractal->name, "julia", 5))
+	{
+		fractal->julia_x = (scaling_values_1(v, x) * fractal->zoom)
+				+ fractal->shift_x;;
+		fractal->julia_y = (scaling_values_2(v, y) * fractal->zoom)
+				+ fractal->shift_y;;
+	}
 	fractal_render(fractal);
 	return (0);
 }
