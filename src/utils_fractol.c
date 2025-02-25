@@ -6,11 +6,11 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:37:17 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/22 20:39:51 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/25 19:43:23 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fract-ol.h"
+#include "../includes/fractol.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -55,7 +55,7 @@ double	scaling(t_scaling_values v)
 {
 	double	result;
 
-	result = (v.new_max - v.new_min) * (v.unscale_num - v.old_min) /
-			(v.old_max - v.old_min) + v.new_min;
+	result = (v.new_max - v.new_min) * (v.unscale_num - v.old_min)
+		/ (v.old_max - v.old_min) + v.new_min;
 	return (result);
 }

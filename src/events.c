@@ -6,11 +6,11 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 23:02:58 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/25 19:25:38 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/25 19:37:29 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fract-ol.h"
+#include "../includes/fractol.h"
 
 int	x_manage(t_fractal *fractal)
 {

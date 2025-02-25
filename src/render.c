@@ -6,11 +6,11 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 01:53:55 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/25 18:58:59 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/25 19:42:55 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fract-ol.h"
+#include "../includes/fractol.h"
 
 void	pixel_put(int x, int y, t_img *img, int color)
 {
@@ -53,7 +53,7 @@ void	manage_pixel(int x, int y, t_fractal *fractal)
 		{
 			clr = scaling_values_3(v, fractal, i);
 			pixel_put(x, y, &fractal->img, clr);
-			return;
+			return ;
 		}
 		++i;
 	}
@@ -66,14 +66,14 @@ void	fractal_render(t_fractal *fractal)
 	int	y;
 
 	y = -1;
-	while (++y < size_y)
+	while (++y < SIZE_Y)
 	{
 		x = -1;
-		while (++x < size_x)
+		while (++x < SIZE_X)
 		{
 			manage_pixel(x, y, fractal);
 		}
 	}
 	mlx_put_image_to_window(fractal->mlx_connection, fractal->mlx_window,
-			fractal->img.img_ptr, 0, 0);
+		fractal->img.img_ptr, 0, 0);
 }

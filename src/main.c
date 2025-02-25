@@ -6,11 +6,11 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 18:50:42 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/25 19:33:39 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/25 19:37:36 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fract-ol.h"
+#include "../includes/fractol.h"
 
 int	main(int ac, char **av)
 {

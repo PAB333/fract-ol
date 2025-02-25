@@ -6,17 +6,17 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 03:00:01 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/25 19:07:44 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/25 19:39:38 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fract-ol.h"
+#include "../includes/fractol.h"
 
 double	scaling_values_1(t_scaling_values v, int x)
 {
 	v.new_max = +2;
 	v.new_min = -2;
-	v.old_max = size_x;
+	v.old_max = SIZE_X;
 	v.old_min = 0;
 	v.unscale_num = x;
 	return (scaling(v));
@@ -26,7 +26,7 @@ double	scaling_values_2(t_scaling_values v, int y)
 {
 	v.new_max = -2;
 	v.new_min = +2;
-	v.old_max = size_y;
+	v.old_max = SIZE_Y;
 	v.old_min = 0;
 	v.unscale_num = y;
 	return (scaling(v));
