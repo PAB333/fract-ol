@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 17:56:55 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/25 19:41:17 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/26 19:14:34 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ double		scaling_values_3(t_scaling_values v, t_fractal *f, int i);
 //events
 int			key_manage(int keysym, t_fractal *fractal);
 int			x_manage(t_fractal *fractal);
-int			mouse_manage(int button, int x, int y, t_fractal *fractal);
+int			mouse_manage(int button, t_fractal *fractal);
 int			julia_track(int x, int y, t_fractal *fractal);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 23:02:58 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/02/25 19:37:29 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/02/26 19:14:20 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	key_manage(int keysym, t_fractal *fractal)
 	return (0);
 }
 
-int	mouse_manage(int button, int x, int y, t_fractal *fractal)
+int	mouse_manage(int button, t_fractal *fractal)
 {
 	if (button == Button4)
 		fractal->zoom *= 0.95;

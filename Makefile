@@ -6,7 +6,7 @@
 #    By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/26 19:03:33 by pibreiss          #+#    #+#              #
-#    Updated: 2025/02/26 19:11:38 by pibreiss         ###   ########.fr        #
+#    Updated: 2025/02/26 19:19:49 by pibreiss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 LDFLAGS = -Lminilibx-linux -lmlx_Linux -lX11 -lXext
 
-SRCS = src/*.c
+SRCS = src/main.c src/initialization.c src/events.c src/render.c \
+		src/utils_fractol.c src/utils_fractol2.c \
 
 OBJS = $(SRCS:.c=.o)
 
@@ -27,7 +28,7 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LDFLAGS)
 
 %.o: %.c
-    $(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
