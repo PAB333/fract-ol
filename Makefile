@@ -6,7 +6,7 @@
 #    By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/26 19:03:33 by pibreiss          #+#    #+#              #
-#    Updated: 2025/02/26 19:19:49 by pibreiss         ###   ########.fr        #
+#    Updated: 2025/02/26 19:26:29 by pibreiss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ all : $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LDFLAGS)
 
-%.o: %.c
+%.o: %.c includes/fractol.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
