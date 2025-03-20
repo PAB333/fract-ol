@@ -6,7 +6,7 @@
 /*   By: pibreiss <pibreiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 01:53:55 by pibreiss          #+#    #+#             */
-/*   Updated: 2025/03/20 16:24:29 by pibreiss         ###   ########.fr       */
+/*   Updated: 2025/03/20 16:30:26 by pibreiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	manage_pixel(int x, int y, t_fractal *fractal)
 	int					i;
 	int					clr;
 	t_scaling_values	v;
-	double				smooth_i;
 
 	i = 0;
 	z.x = (scaling_values_1(v, x) * fractal->zoom) + fractal->shift_x;
@@ -52,8 +51,7 @@ void	manage_pixel(int x, int y, t_fractal *fractal)
 		z = sum_complex(square_complex(z), c);
 		if ((z.x * z.x) + (z.y * z.y) > fractal->esc_value)
 		{
-			smooth_i = i + 1 - log(log(sqrt(z.x * z.x + z.y * z.y))) / log(2.0);
-			clr = scaling_values_3(v, fractal, smooth_i);
+			clr = scaling_values_3(v, fractal, i);
 			pixel_put(x, y, &fractal->img, clr);
 			return ;
 		}
